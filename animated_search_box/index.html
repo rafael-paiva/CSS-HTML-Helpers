@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Animated Seach Box</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    </head>
+    
+    <body>
+        <div class="search-box">
+            <input class="search-txt" type="text" name="" placeholder="Search here">
+            <a class="search-btn" href="#">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+    </body>
+    
+    <script>
+        let searchBox = document.querySelector('.search-box')
+        let inputText = document.querySelector('.search-txt')
+
+        searchBox.onmouseout = () => {     //Recolhe o input se estiver vazio
+            if(inputText.value == ''){
+                inputText.style.width = 0
+                searchBox.style.boxShadow = '0 0 0 #000'
+            }
+        }
+        searchBox.onmouseover = () => {    //Expande o input ao passar o mouse
+            searchBox.style.boxShadow = '0 0 8px #00FFA6'
+            inputText.style.width = '270px'
+        }
+    </script>
+</html>
