@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Navbar</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    </head>
+    
+    <body>
+        <header>
+            <img src="img/alien.png" class="logo">
+            <div class="search-box">
+                <input class="search-txt" type="text" name="" placeholder="Search here">
+                <a class="search-btn" href="#">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" class="tooltiped-item">Services<span class="tooltip">Conheça nossos serviços</span></a></li>
+                    <li><a href="#" class="tooltiped-item">Projects<span class="tooltip">Conheça nossos projetos</span></a></li>
+                    <li><a href="#" class="tooltiped-item">About<span class="tooltip">Nossa história</span></a></li>
+                </ul>
+            </nav>
+            <a class="login" href="#"><button>Login</button></a>
+        </header>
+    </body>
+    
+    <script>
+        let searchBox = document.querySelector('.search-box')
+        let inputText = document.querySelector('.search-txt')
+
+        searchBox.onmouseout = () => {     //Recolhe o input se estiver vazio
+            if(inputText.value == ''){
+                inputText.style.width = 0
+                searchBox.style.boxShadow = '0 0 0 #000'
+            }
+        }
+        searchBox.onmouseover = () => {    //Expande o input ao passar o mouse
+            searchBox.style.boxShadow = ' 0 0 12px rgb(0, 136, 169)'
+            inputText.style.width = '200px'
+        }
+    </script>
+</html>
